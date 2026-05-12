@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Seite</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --gruen: #00A651;
+            --blau: #00AEEF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #f0f0f0;
+            min-height: 100vh;
+        }
+
+        /* Grüner Frutiger-Style Header */
+        header {
+            background: linear-gradient(135deg, var(--gruen), #008c44);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 166, 81, 0.3);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        /* Container für die Buttons */
+        .button-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        /* Frutiger Aero Style Buttons */
+        .btn {
+            padding: 22px 30px;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(145deg, #00AEEF, #0098d1);
+            border: none;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 8px 25px rgba(0, 174, 239, 0.35),
+                inset 0 4px 12px rgba(255,255,255,0.4),
+                inset 0 -4px 8px rgba(0,0,0,0.15);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 
+                0 15px 35px rgba(0, 174, 239, 0.45),
+                inset 0 6px 15px rgba(255,255,255,0.5);
+        }
+
+        .btn:active {
+            transform: translateY(-2px);
+        }
+
+        /* Glanz-Effekt */
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 60%;
+            height: 60%;
+            background: linear-gradient(
+                120deg,
+                rgba(255,255,255,0) 30%,
+                rgba(255,255,255,0.7) 50%,
+                rgba(255,255,255,0) 70%
+            );
+            opacity: 0.6;
+            transition: all 0.6s;
+        }
+
+        .btn:hover::before {
+            top: -20%;
+            left: -20%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Willkommen</h1>
+        <p>Dein Frutiger Aero Design</p>
+    </header>
+
+    <div class="button-container">
+        <button class="btn" onclick="alert('Button 1 geklickt!')">Button 1</button>
+        <button class="btn" onclick="alert('Button 2 geklickt!')">Button 2</button>
+        <button class="btn" onclick="alert('Button 3 geklickt!')">Button 3</button>
+        <button class="btn" onclick="alert('Button 4 geklickt!')">Button 4</button>
+    </div>
+
+    <script>
+        // Einfache Möglichkeit, die Texte später anzupassen
+        console.log("%c✅ index.html erfolgreich erstellt! Bearbeite die Button-Texte direkt im HTML.", "color: #00A651; font-size: 16px;");
+    </script>
+
+</body>
+</html>
