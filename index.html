@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Seite</title>
+    <title>Frutiger Aero</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-        :root {
-            --gruen: #00A651;
-            --blau: #00AEEF;
-        }
 
         * {
             margin: 0;
@@ -19,95 +14,94 @@
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: #f0f0f0;
+            font-family: 'Inter', system-ui, sans-serif;
             min-height: 100vh;
+            background: #0a2a1f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Grüner Frutiger-Style Header */
+        /* Header mit Glas-Effekt + grüner Bubble-Look */
         header {
-            background: linear-gradient(135deg, var(--gruen), #008c44);
-            color: white;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 166, 81, 0.3);
-        }
-
-        header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-        }
-
-        /* Container für die Buttons */
-        .button-container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        /* Frutiger Aero Style Buttons */
-        .btn {
-            padding: 22px 30px;
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: white;
-            background: linear-gradient(145deg, #00AEEF, #0098d1);
-            border: none;
-            border-radius: 18px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            width: 90%;
+            max-width: 1100px;
+            background: rgba(0, 255, 140, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 32px;
+            padding: 60px 40px;
             box-shadow: 
-                0 8px 25px rgba(0, 174, 239, 0.35),
-                inset 0 4px 12px rgba(255,255,255,0.4),
-                inset 0 -4px 8px rgba(0,0,0,0.15);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                inset 0 8px 20px rgba(255, 255, 255, 0.4);
             position: relative;
             overflow: hidden;
         }
 
-        .btn:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 
-                0 15px 35px rgba(0, 174, 239, 0.45),
-                inset 0 6px 15px rgba(255,255,255,0.5);
-        }
-
-        .btn:active {
-            transform: translateY(-2px);
-        }
-
-        /* Glanz-Effekt */
-        .btn::before {
+        /* Leichter Bubble-Hintergrund-Effekt */
+        header::before {
             content: '';
             position: absolute;
             top: -50%;
             left: -50%;
-            width: 60%;
-            height: 60%;
-            background: linear-gradient(
-                120deg,
-                rgba(255,255,255,0) 30%,
-                rgba(255,255,255,0.7) 50%,
-                rgba(255,255,255,0) 70%
-            );
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(180,255,100,0.4) 0%, transparent 70%);
             opacity: 0.6;
-            transition: all 0.6s;
+            pointer-events: none;
         }
 
-        .btn:hover::before {
-            top: -20%;
-            left: -20%;
+        header h1 {
+            color: white;
+            font-size: 3.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Button Container */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Frutiger Aero / Glass Buttons */
+        .btn {
+            padding: 22px 48px;
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: white;
+            background: rgba(0, 255, 180, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 
+                0 10px 25px rgba(0, 0, 0, 0.3),
+                inset 0 6px 12px rgba(255,255,255,0.4);
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+            min-width: 220px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: rgba(0, 255, 180, 0.55);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(0, 255, 140, 0.4),
+                inset 0 8px 15px rgba(255,255,255,0.6);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
         }
     </style>
 </head>
@@ -115,20 +109,13 @@
 
     <header>
         <h1>Willkommen</h1>
-        <p>Dein Frutiger Aero Design</p>
+        
+        <div class="buttons">
+            <button class="btn">Button 1</button>
+            <button class="btn">Button 2</button>
+            <button class="btn">Button 3</button>
+        </div>
     </header>
-
-    <div class="button-container">
-        <button class="btn" onclick="alert('Button 1 geklickt!')">Button 1</button>
-        <button class="btn" onclick="alert('Button 2 geklickt!')">Button 2</button>
-        <button class="btn" onclick="alert('Button 3 geklickt!')">Button 3</button>
-        <button class="btn" onclick="alert('Button 4 geklickt!')">Button 4</button>
-    </div>
-
-    <script>
-        // Einfache Möglichkeit, die Texte später anzupassen
-        console.log("%c✅ index.html erfolgreich erstellt! Bearbeite die Button-Texte direkt im HTML.", "color: #00A651; font-size: 16px;");
-    </script>
 
 </body>
 </html>
